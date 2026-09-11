@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-bold text-ink;
+  }
+  :focus-visible {
+    outline: 2px solid #2E5EFF;
+    outline-offset: 2px;
+  }
+  ::selection {
+    background-color: #EAF0FF;
+    color: #101828;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink text-white font-semibold px-6 py-3 text-sm transition hover:bg-black active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink font-semibold px-6 py-3 text-sm border border-line transition hover:border-ink active:scale-[0.98];
+  }
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp text-white font-semibold px-6 py-3 text-sm transition hover:bg-whatsapp-dark active:scale-[0.98];
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-soft/60 focus:border-brandblue focus:ring-1 focus:ring-brandblue transition;
+  }
+  .card-surface {
+    @apply bg-white border border-line rounded-card shadow-softer;
+  }
+  .section-eyebrow {
+    @apply text-xs font-semibold text-brandblue;
+  }
+}
+
+/* Hide scrollbar for horizontally scrollable chip rows, keep it usable via mouse/touch */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
